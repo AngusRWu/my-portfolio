@@ -1,23 +1,13 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Sections/Home";
-import About from "./components/Sections/About";
-import Projects from "./components/Sections/Projects";
-import Contact from "./components/Sections/Contact";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ProjectPage from "./pages/ProjectPage";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-
-        <section id="home"><Home /></section>
-        <section id="about"><About /></section>
-        <section id="projects"><Projects /></section>
-        <section id="contact"><Contact /></section>
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects/:slug" element={<ProjectPage />} />
+    </Routes>
   );
 }
 
-export default App;
