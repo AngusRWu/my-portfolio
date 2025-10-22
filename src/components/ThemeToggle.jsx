@@ -22,7 +22,7 @@ export default function ThemeToggle() {
       className="relative flex items-center justify-between w-14 h-7 rounded-full p-1 bg-gray-200 dark:bg-gray-700 transition-all duration-300"
     >
       <div
-        className={`absolute left-1 top-1 w-5 h-5 rounded-full bg-white dark:bg-gray-900 transform transition-transform duration-300 ${
+        className={`absolute left-1 top-1 w-5 h-5 rounded-full bg-white dark:bg-gray-800 transform transition-transform duration-300 ${
           darkMode ? "translate-x-7" : "translate-x-0"
         }`}
       />

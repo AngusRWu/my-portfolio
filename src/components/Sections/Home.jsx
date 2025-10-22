@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <motion.section
       id="home"
-      className="flex flex-col items-center justify-center text-center min-h-screen pt-24 dark:bg-gray-950 dark:text-gray-200"
+      className="flex flex-col items-center justify-center text-center min-h-screen pt-24 dark:bg-gray-900 dark:text-gray-200"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: -12 }}
       transition={{ duration: 1 }}
@@ -14,7 +14,15 @@ export default function Home() {
         A passionate software engineer building modern web experiences.
       </p>
       <motion.a
-        href="#projects"
+        href={`#/projects`}
+        onClick={(e) => {
+          e.preventDefault();
+          // Scroll to projects section
+          const element = document.getElementById('projects');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
         whileHover={{ scale: 1.1 }}
         className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
       >
