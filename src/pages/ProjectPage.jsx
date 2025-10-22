@@ -1,37 +1,26 @@
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
-const projectData = {
-  "lung-nodule-detection": {
-    title: "Lung Nodule Detection",
-    description:
-      "A deep learning project using CNNs to detect and classify lung nodules in CT scans.",
-  },
-  "customer-behavior": {
-    title: "Customer Behavior Analysis",
-    description:
-      "Analyzing user retention and purchase trends using Python, Pandas, and scikit-learn.",
-  },
-};
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function ProjectPage() {
   const { slug } = useParams();
-  const project = projectData[slug];
-
-  if (!project) return <p>Project not found</p>;
+  const navigate = useNavigate();
 
   return (
-    <motion.div
-      className="min-h-screen px-6 py-20 dark:bg-gray-900 text-gray-800 dark:text-gray-100"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <Link to="/" className="text-blue-500 hover:underline mb-6 inline-block">
+    <div className="p-10 text-center dark:bg-gray-900 min-h-screen">
+      <h2 className="text-3xl font-bold text-indigo-500 capitalize">
+        {slug.replace(/-/g, " ")}
+      </h2>
+
+      <p className="mt-6 text-gray-600 dark:text-gray-100">
+        Details about {slug.replace(/-/g, " ")} will go here.
+      </p>
+
+      {/* Back button */}
+      <button
+        onClick={() => navigate("/#projects")}
+        className="mt-10 px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition"
+      >
         ← Back to Home
-      </Link>
-      <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
-      <p className="max-w-2xl mx-auto text-lg">{project.description}</p>
-    </motion.div>
+      </button>
+    </div>
   );
 }
