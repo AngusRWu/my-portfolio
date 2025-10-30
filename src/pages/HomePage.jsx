@@ -10,10 +10,10 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
-        <section id="home"><Home /></section>
-        <section id="about"><About /></section>
-        <section id="projects"><Projects /></section>
-        <section id="contact"><Contact /></section>
+        <section id="home" className="scroll-mt-16"><Home /></section>
+        <section id="about" className="scroll-mt-16"><About /></section>
+        <section id="projects" className="scroll-mt-16"><Projects /></section>
+        <section id="contact" className="scroll-mt-16"><Contact /></section>
       </main>
     </>
   );

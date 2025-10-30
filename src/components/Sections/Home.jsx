@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <motion.section
       id="home"
-      className="flex flex-col items-center justify-center text-center min-h-screen pt-24 dark:bg-gray-900 dark:text-gray-200"
+      className="flex flex-col items-center justify-center text-center min-h-screen pt-8 md:pt-24 dark:bg-gray-900 dark:text-gray-200"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: -12 }}
       transition={{ duration: 1 }}

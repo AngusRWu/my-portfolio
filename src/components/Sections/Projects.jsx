@@ -48,7 +48,7 @@ export default function Projects() {
       <h3 className="text-3xl font-semibold mb-10 text-indigo-600 dark:text-indigo-400">
         Projects
       </h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-40">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-4">
         {projects.map((p, i) => (
           <Link key={p.slug} to={`/projects/${p.slug}`}>
             <motion.div
